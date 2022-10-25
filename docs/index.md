@@ -5,8 +5,8 @@ title: Kitty
 titleTemplate: 一个Vue3组件库
 
 hero:
-  name: Kitty
-  text: 看看你
+  name: QKL
+  text: ''
   tagline: 没啥特点仅供学习
   image:
     src: /logo.png

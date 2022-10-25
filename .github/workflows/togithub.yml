@@ -3,8 +3,8 @@ name: build to my blog
 on:
   # 配置当push进入什么分支的时候执行
   push:
-    branches: 
-     - master
+    branches:
+      - master
 
 jobs:
   # This workflow contains a single job called "build"
@@ -18,21 +18,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
-     # 使用的node版本   
+      # 使用的node版本
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@main
         with:
-          node-version:  ${{ matrix.node }}
-      
-     # 执行安装
+          node-version: ${{ matrix.node }}
+
+      # 执行安装
       - name: Install dependencies
         run: npm install
-    
-    # 执行打包
+
+      # 执行打包
       - name: Build Blog
         run: npm run build
-      
-    # 执行部署
+
+      # 执行部署
       - name: Deploy to Pages
         run: |
           cd  docs/.vitepress/dist 
@@ -43,3 +43,18 @@ jobs:
           git commit -m 'deploy'
           git push -f https://qukula:${{ secrets.ACCESS_TOKEN_QKL }}@github.com/qukula/qkl.git master:gh-pages
           cd -
+  # 搜索
+  algolia:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get the content of algolia.json as config
+        id: algolia_config
+        run: echo "::set-output name=config::$(cat algolia.json | jq -r tostring)"
+      - name: Push indices to Algolia
+        uses: signcl/docsearch-scraper-action@master
+        env:
+          APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
+          API_KEY: ${{ secrets.ADMIN_API_KEY }}
+          CONFIG: ${{ steps.algolia_config.outputs.config }}

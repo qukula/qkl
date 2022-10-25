@@ -35,11 +35,11 @@ jobs:
     # 执行部署
       - name: Deploy to Pages
         run: |
-          cd  docs/.vitepress/dist/qkl 
+          cd  docs/.vitepress/dist 
           git init
           git config user.name "qukula"
           git config user.email "${{ secrets.GIT_EMAIL }}"
           git add -A
           git commit -m 'deploy'
-          git push -f https://qukula:${{ secrets.ACCESS_TOKEN_QKL }}@github.com/qukula/qklVitePress.git master:gh-pages
+          git push -f https://qukula:${{ secrets.ACCESS_TOKEN_QKL }}@github.com/qukula/qkl.git master:gh-pages
           cd -

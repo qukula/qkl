@@ -1,4 +1,4 @@
-const commonPath = '/menu1';
+const commonPath = '/qkl/menu1';
 
 export default [
     {

@@ -26,11 +26,11 @@ export default {
       indexName: '',
     },
       nav: [
-          { text: 'Vue2', link: '/qkl/menu1/Vue2/Vue页面模版', activeMatch: '/qkl/menu1/' },
-          { text: '小程序', link: '/qkl/menu1/小程序/小程序page模版', activeMatch: '/qkl/menu1/' }
+          { text: 'Vue2', link: '/qkl/menu1/Vue2/Vue页面模版', activeMatch: '/menu1/' },
+          { text: '小程序', link: '/qkl/menu1/小程序/小程序page模版', activeMatch: '/menu1/' }
       ],
       sidebar: {
-        '/qkl/menu1/': menu1Sidebar,
+        '/menu1/': menu1Sidebar,
       },
       socialLinks: [
           { icon: 'github', link: 'https://github.com/Kai-web' },

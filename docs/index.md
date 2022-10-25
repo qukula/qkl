@@ -14,7 +14,7 @@ hero:
   actions:
     - theme: brand
       text: 开始
-      link: /qkl/menu1/小程序/小程序components模板.md
+      link: /menu1/小程序/小程序components模板.md
     - theme: alt
       text: 在 Gitee 上查看
       link: https://gitee.com/geeksdidi/kittyui

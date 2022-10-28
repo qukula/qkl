@@ -31,7 +31,7 @@ export default {
       indexName: 'vitepress-blog'
     },
     nav: [{
-        text: 'Vue2测试',
+        text: 'Vue2测试2',
         // activeMatch: '/menu1/',
         items: [
           { text: '小程序', link: '/menu1/小程序/小程序page模版' }

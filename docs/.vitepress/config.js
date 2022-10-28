@@ -31,14 +31,16 @@ export default {
       indexName: 'vitepress-blog'
     },
     nav: [{
-        text: 'Vue2',
-        link: '/menu1/Vue2/Vue页面模版',
-        activeMatch: '/menu1/'
+        text: 'Vue2测试',
+        // activeMatch: '/menu1/',
+        items: [
+          { text: '小程序', link: '/menu1/小程序/小程序page模版' }
+        ]
       },
       {
         text: '小程序',
-        link: '/menu1/小程序/小程序page模版',
-        activeMatch: '/menu1/'
+        link: '/menu1/小程序/小程序page模版'
+        // activeMatch: '/menu1/'
       }
     ],
     sidebar: {
